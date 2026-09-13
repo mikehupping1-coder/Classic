@@ -212,11 +212,20 @@ button:active{opacity:0.85;}
 
   <!-- SETTINGS -->
   <div class="screen" id="screenSettings">
-    <div class="card-tinted">
+    <div class="card-tinted" id="topupCard">
       <p style="font-size:14px;font-weight:700;margin:0 0 6px;letter-spacing:0.5px;">TOP UP</p>
       <p style="font-size:14px;margin:0 0 14px;">Need more rides this month?</p>
-      <button class="btn-secondary topupBtn" data-count="2" style="display:flex;justify-content:space-between;align-items:center;"><span>+2 rides</span><span>£16</span></button>
-      <button class="btn-secondary topupBtn" data-count="4" style="display:flex;justify-content:space-between;align-items:center;"><span>+4 rides</span><span>£30</span></button>
+      <button class="btn-secondary topupBtn" data-count="2" data-price="£16" style="display:flex;justify-content:space-between;align-items:center;"><span>+2 rides</span><span>£16</span></button>
+      <button class="btn-secondary topupBtn" data-count="4" data-price="£30" style="display:flex;justify-content:space-between;align-items:center;"><span>+4 rides</span><span>£30</span></button>
+    </div>
+    <div class="card" id="topupConfirm" style="display:none;text-align:center;">
+      <p style="font-size:17px;font-weight:700;margin:0 0 8px;" id="confirmTopupTitle">Add rides?</p>
+      <p style="font-size:14px;color:var(--text-secondary);margin:0 0 18px;">This will be charged to your card ending 4417.</p>
+      <button class="btn-primary" id="topupYes">YES, ADD RIDES</button>
+      <button class="btn-secondary" id="topupNo">CANCEL</button>
+    </div>
+    <div class="card-tinted" id="topupDone" style="display:none;text-align:center;">
+      <p style="font-size:16px;font-weight:700;margin:0;" id="topupDoneText">✓ Rides added</p>
     </div>
     <div class="card" style="display:flex;justify-content:space-between;align-items:center;">
       <div><p style="font-size:15px;font-weight:700;margin:0 0 2px;">Share my ride</p><p style="font-size:12px;color:var(--text-secondary);margin:0;">Karen gets a text every pickup</p></div>
@@ -314,9 +323,24 @@ button:active{opacity:0.85;}
     btn.onclick = function(){ btn.closest('.ride-item').style.opacity = '0.4'; toast.textContent = 'Ride cancelled'; };
   });
 
+  var pendingTopup = null;
   document.querySelectorAll('.topupBtn').forEach(function(btn){
-    btn.onclick = function(){ toast.textContent = 'Added ' + btn.getAttribute('data-count') + ' rides to your account'; };
+    btn.onclick = function(){
+      pendingTopup = btn.getAttribute('data-count');
+      document.getElementById('confirmTopupTitle').textContent = 'Add ' + pendingTopup + ' rides for ' + btn.getAttribute('data-price') + '?';
+      document.getElementById('topupCard').style.display = 'none';
+      document.getElementById('topupConfirm').style.display = 'block';
+    };
   });
+  document.getElementById('topupNo').onclick = function(){
+    document.getElementById('topupConfirm').style.display = 'none';
+    document.getElementById('topupCard').style.display = 'block';
+  };
+  document.getElementById('topupYes').onclick = function(){
+    document.getElementById('topupConfirm').style.display = 'none';
+    document.getElementById('topupDoneText').textContent = '✓ ' + pendingTopup + ' rides added';
+    document.getElementById('topupDone').style.display = 'block';
+  };
 
   document.querySelectorAll('.regular-btn').forEach(function(btn){
     btn.onclick = function(){
