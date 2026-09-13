@@ -15,8 +15,8 @@
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 html,body{margin:0;padding:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;color:var(--dark);height:100%;overscroll-behavior:none;}
 .app{max-width:480px;margin:0 auto;padding:max(20px,env(safe-area-inset-top)) 16px 40px;min-height:100vh;}
-.header{display:flex;align-items:center;justify-content:center;position:relative;padding:6px 6px 20px;}
-.iconbtn{position:absolute;background:var(--white);border:2px solid var(--dark);color:var(--dark);border-radius:50%;width:38px;height:38px;padding:0;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;}
+.header{display:flex;align-items:center;justify-content:center;position:relative;padding:6px 6px 24px;}
+.iconbtn{position:absolute;background:var(--white);border:2px solid var(--dark);color:var(--dark);border-radius:50%;width:52px;height:52px;padding:0;display:flex;align-items:center;justify-content:center;font-size:26px;cursor:pointer;}
 .iconbtn.left{left:0;} .iconbtn.right{right:0;}
 .wordmark{font-family:Georgia,'Times New Roman',serif;font-size:28px;font-weight:700;letter-spacing:2px;margin:0;text-align:center;}
 .subhead{font-size:14px;color:var(--text-secondary);margin:4px 0 0;text-align:center;}
@@ -29,6 +29,7 @@ html,body{margin:0;padding:0;background:var(--bg);font-family:-apple-system,Blin
 .row .label{font-size:14px;color:var(--text-secondary);}
 .row .value{font-size:15px;color:var(--dark);font-weight:600;}
 button{width:100%;border-radius:10px;padding:18px;font-size:16px;font-weight:600;font-family:inherit;margin-bottom:12px;border:none;cursor:pointer;}
+button:last-child{margin-bottom:0;}
 button:active{opacity:0.85;}
 .btn-primary{background:var(--dark);color:var(--white);}
 .btn-secondary{background:var(--white);border:2px solid var(--dark);color:var(--dark);}
@@ -39,8 +40,8 @@ button:active{opacity:0.85;}
 .next-ride .label{font-size:14px;color:var(--red-light);font-weight:700;margin:0 0 8px;letter-spacing:0.5px;}
 .next-ride .time{font-size:26px;font-weight:700;color:var(--white);margin:0 0 6px;}
 .next-ride .dest{font-size:15px;color:var(--red-light);margin:0 0 16px;}
-.cancel-inline{background:transparent;border:2px solid var(--red-light);color:var(--red-light);}
-.toast{margin-top:8px;text-align:center;font-size:15px;color:var(--dark);min-height:20px;font-weight:500;}
+.cancel-inline{background:transparent;border:2px solid var(--red-light);color:var(--red-light);margin:0;}
+.toast{margin-top:16px;text-align:center;font-size:15px;color:var(--dark);min-height:20px;font-weight:500;}
 .avatar{width:72px;height:72px;border-radius:50%;background:var(--card);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:36px;}
 .toggle{width:46px;height:26px;background:var(--dark);border-radius:13px;position:relative;flex-shrink:0;cursor:pointer;}
 .toggle .dot{width:20px;height:20px;background:var(--white);border-radius:50%;position:absolute;top:3px;right:3px;transition:right 0.2s;}
@@ -53,7 +54,7 @@ button:active{opacity:0.85;}
 .driver-initials{width:48px;height:48px;border-radius:50%;background:var(--card);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;}
 .driver-name{font-size:17px;font-weight:700;margin:0;}
 .driver-car{font-size:14px;margin:2px 0 0;}
-.detail-block{border-top:2px solid var(--card-light);padding-top:14px;margin-bottom:12px;}
+.detail-block{border-top:2px solid var(--card-light);padding-top:14px;}
 .detail-block .label{font-size:14px;font-weight:700;margin:0 0 4px;letter-spacing:0.5px;}
 .detail-block .value{font-size:19px;font-weight:700;margin:0;}
 .arrived-box{background:var(--red);border-radius:16px;padding:2.25rem 1.5rem;text-align:center;margin-bottom:18px;}
@@ -62,15 +63,18 @@ button:active{opacity:0.85;}
 .faq-card p:last-child{font-size:14px;color:var(--text-secondary);margin:0;line-height:1.5;}
 .ride-item{background:var(--white);border:2px solid var(--dark);border-radius:12px;padding:1.1rem;margin-bottom:12px;}
 .ride-item .top{display:flex;justify-content:space-between;align-items:flex-start;}
-.ride-item .daytime{font-size:13px;color:var(--text-secondary);font-weight:600;margin:0 0 6px;}
-.ride-item .place{font-size:18px;font-weight:700;margin:0 0 4px;}
-.ride-item .note{font-size:14px;margin:0;}
+.ride-item .daytime{font-size:13px;color:var(--text-secondary);font-weight:600;margin:0 0 4px;}
+.ride-item .place{font-size:16px;font-weight:700;margin:0;}
 .cancelbtn{background:var(--white);border:2px solid var(--red);color:var(--red);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;white-space:nowrap;width:auto;margin:0;}
+.regular-btn{width:100%;display:flex;align-items:center;gap:14px;background:var(--white);border:2px solid var(--dark);color:var(--dark);border-radius:12px;padding:14px 16px;margin-bottom:10px;text-align:left;}
+.regular-icon{width:44px;height:44px;border-radius:50%;background:var(--card-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px;}
+.regular-name{font-size:16px;font-weight:700;margin:0;}
+.regular-dest{font-size:12px;color:var(--text-secondary);margin:0;}
 .map-wrap{background:var(--card-light);border:2px solid var(--dark);border-radius:12px;padding:1rem;margin-bottom:16px;}
-.billing-mini{background:var(--white);border:2px solid var(--dark);border-radius:10px;padding:0.9rem 1rem;margin-bottom:16px;}
+.billing-mini{background:var(--white);border:2px solid var(--dark);border-radius:10px;padding:0.9rem 1rem;}
 .billing-mini p:first-child{font-size:12px;font-weight:700;margin:0 0 6px;letter-spacing:0.5px;}
 .textsize-row{display:flex;gap:8px;}
-.textsize-row button{flex:1;margin-bottom:0;padding:12px;font-size:14px;}
+.textsize-row button{flex:1;margin-bottom:0;padding:10px;font-size:13px;}
 </style>
 </head>
 <body>
@@ -78,7 +82,7 @@ button:active{opacity:0.85;}
 
   <div class="header">
     <button class="iconbtn left" id="homeBtn" aria-label="Home">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2C2C2A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2C2C2A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>
     </button>
     <div>
       <p class="wordmark">CLASSIC</p>
@@ -105,117 +109,46 @@ button:active{opacity:0.85;}
       <p style="font-size:16px;font-weight:700;margin:0;">✓ Thursday's ride has been cancelled</p>
     </div>
     <button class="btn-primary" id="callBtn">CALL TO BOOK</button>
-    <button class="btn-secondary" id="usualBtn">BOOK THE USUAL</button>
-    <button class="btn-secondary" id="prebookedBtn">CHECK PRE-BOOKED RIDES</button>
-    <p class="section-label">THIS MONTH</p>
-    <div class="card-tinted" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0;">
-      <span style="font-size:16px;font-weight:600;">Rides used</span>
-      <span style="font-size:21px;font-weight:700;">2 of 4</span>
-    </div>
+    <button class="btn-secondary" id="ridesBtn">MY RIDES</button>
   </div>
 
-  <!-- PROFILE -->
-  <div class="screen" id="screenProfile">
-    <div class="card" style="text-align:center;">
-      <div class="avatar">👵🏻</div>
-      <p style="font-size:20px;font-weight:700;margin:0 0 4px;">Mrs Owen</p>
-      <p style="font-size:14px;color:var(--text-secondary);margin:0;">Customer since Jan 2026</p>
-    </div>
-    <div class="card">
-      <div class="row"><span class="label">Subscription</span><span class="value">4 rides / month</span></div>
-      <div class="row"><span class="label">Proxy booker</span><span class="value">Karen (daughter)</span></div>
-      <div class="row"><span class="label">Emergency contact</span><span class="value">Karen, 07700 900123</span></div>
-    </div>
-    <div class="card" style="display:flex;justify-content:space-between;align-items:center;">
-      <div>
-        <p style="font-size:15px;font-weight:700;margin:0 0 2px;">Share my ride</p>
-        <p style="font-size:12px;color:var(--text-secondary);margin:0;">Karen gets a text every pickup</p>
-      </div>
-      <div class="toggle" id="shareToggle" style="margin-left:12px;"><div class="dot"></div></div>
-    </div>
-    <div class="card-tinted">
-      <p style="font-size:14px;font-weight:700;margin:0 0 6px;letter-spacing:0.5px;">TOP UP</p>
-      <p style="font-size:14px;margin:0 0 14px;">Need more rides this month? Add extra below.</p>
-      <button class="btn-secondary topupBtn" data-count="2" style="display:flex;justify-content:space-between;align-items:center;"><span>+2 rides</span><span>£16</span></button>
-      <button class="btn-secondary topupBtn" data-count="4" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0;"><span>+4 rides</span><span>£30</span></button>
-    </div>
-    <p class="section-label" style="margin-top:20px;"></p>
-    <div class="billing-mini">
-      <p>BILLING</p>
-      <div style="display:flex;justify-content:space-between;">
-        <span style="font-size:13px;color:var(--text-secondary);">Card ending 4417</span>
-        <span style="font-size:13px;font-weight:600;">£32 on 1 Oct</span>
-      </div>
-      <p style="font-size:12px;color:var(--text-secondary);margin:6px 0 0;font-weight:400;">To change, call the office.</p>
-    </div>
-    <div class="card">
-      <p style="font-size:14px;font-weight:700;margin:0 0 12px;letter-spacing:0.5px;">TEXT SIZE</p>
-      <div class="textsize-row">
-        <button class="btn-secondary" id="textStandard">Standard</button>
-        <button class="btn-primary" id="textLarge" style="margin-bottom:0;">Large</button>
-      </div>
-    </div>
-    <button class="btn-secondary" id="helpBtn">HELP & QUESTIONS</button>
-    <button class="btn-primary" id="callFromProfile">CALL THE OFFICE</button>
-  </div>
+  <!-- MY RIDES -->
+  <div class="screen" id="screenRides">
+    <p class="section-label" style="margin-top:0;">BOOK A REGULAR</p>
+    <button class="regular-btn" data-name="Dialysis" data-dest="Northwick Park">
+      <div class="regular-icon">💧</div>
+      <div><p class="regular-name">Dialysis</p><p class="regular-dest">Northwick Park</p></div>
+    </button>
+    <button class="regular-btn" data-name="Doctor's" data-dest="Harrow GP Surgery" style="margin-bottom:20px;">
+      <div class="regular-icon">🩺</div>
+      <div><p class="regular-name">Doctor's</p><p class="regular-dest">Harrow GP Surgery</p></div>
+    </button>
 
-  <!-- HELP -->
-  <div class="screen" id="screenHelp">
-    <div class="faq-card">
-      <p>How do I cancel a ride?</p>
-      <p>Tap Cancel This Ride on the home screen. If your driver's already on the way, call the office and we'll sort it.</p>
-    </div>
-    <div class="faq-card">
-      <p>What if my driver is late?</p>
-      <p>Check your tracker screen for updates, or call the office and we'll check for you.</p>
-    </div>
-    <div class="faq-card">
-      <p>Can someone else book for me?</p>
-      <p>Yes, your proxy booker can call and book, change, or cancel on your behalf.</p>
-    </div>
-    <div class="faq-card">
-      <p>Can I message my driver?</p>
-      <p>Not directly — call the office and we'll pass on anything the driver needs to know.</p>
-    </div>
-    <button class="btn-primary" id="callFromHelp">CALL THE OFFICE</button>
-  </div>
-
-  <!-- PREBOOKED -->
-  <div class="screen" id="screenPrebooked">
-    <p class="section-label" style="margin-top:0;">UPCOMING RIDES</p>
+    <p class="section-label" style="margin-top:0;">UPCOMING</p>
     <div class="ride-item">
       <div class="top">
-        <div>
-          <p class="daytime">THU, 9:30AM</p>
-          <p class="place">Northwick Park</p>
-          <p class="note">Renal unit · Repeats weekly</p>
-        </div>
-        <button class="cancelbtn" data-day="Thursday">Cancel</button>
+        <div><p class="daytime">THU, 9:30AM</p><p class="place">Northwick Park</p></div>
+        <button class="cancelbtn cancelUpcoming">Cancel</button>
       </div>
     </div>
-    <div class="ride-item">
+    <div class="ride-item" style="margin-bottom:20px;">
       <div class="top">
-        <div>
-          <p class="daytime">MON, 2:00PM</p>
-          <p class="place">Harrow GP Surgery</p>
-          <p class="note">One-off appointment</p>
-        </div>
-        <button class="cancelbtn" data-day="Monday">Cancel</button>
+        <div><p class="daytime">MON, 2:00PM</p><p class="place">Harrow GP Surgery</p></div>
+        <button class="cancelbtn cancelUpcoming">Cancel</button>
       </div>
     </div>
-    <button class="btn-primary" id="callOfficeFromPrebooked">CALL TO CHANGE A RIDE</button>
+    <button class="btn-primary" id="callChangeRide">CALL TO CHANGE A RIDE</button>
   </div>
 
   <!-- CONFIRM -->
   <div class="screen" id="screenConfirm">
     <div class="card">
-      <p style="font-size:13px;color:var(--text-secondary);font-weight:600;margin:0 0 12px;letter-spacing:0.5px;">CONFIRM YOUR USUAL</p>
-      <div class="row"><span class="label">Destination</span><span class="value">Northwick Park</span></div>
-      <div class="row"><span class="label">Department</span><span class="value">Renal unit</span></div>
+      <p style="font-size:13px;color:var(--text-secondary);font-weight:600;margin:0 0 12px;letter-spacing:0.5px;">CONFIRM YOUR RIDE</p>
+      <div class="row"><span class="label">Trip</span><span class="value" id="confirmTripName">Dialysis</span></div>
+      <div class="row"><span class="label">Destination</span><span class="value" id="confirmDest">Northwick Park</span></div>
       <div class="row"><span class="label">Pickup time</span><span class="value">9:30am</span></div>
-      <div class="row"><span class="label">Driver</span><span class="value">Tariq</span></div>
     </div>
-    <button class="btn-primary" id="confirmBtn">CONFIRM BOOKING</button>
+    <button class="btn-primary" id="confirmBookingBtn">CONFIRM BOOKING</button>
   </div>
 
   <!-- TRACK -->
@@ -234,39 +167,97 @@ button:active{opacity:0.85;}
     <div class="card">
       <div class="driver-row">
         <div class="driver-initials">TQ</div>
-        <div>
-          <p class="driver-name">Tariq — your usual driver</p>
-          <p class="driver-car">Silver Ford Galaxy · KL19 XYZ</p>
-        </div>
+        <div><p class="driver-name">Tariq</p><p class="driver-car">Silver Ford Galaxy · KL19 XYZ</p></div>
       </div>
       <div class="detail-block"><p class="label">PICKUP</p><p class="value">Home · 9:30am</p></div>
-      <div class="detail-block" style="border-bottom:none;margin-bottom:0;"><p class="label">DESTINATION</p><p class="value">Northwick Park</p></div>
     </div>
     <button class="btn-secondary" id="mapToggleBtn">SEE DRIVER ON MAP</button>
     <button class="btn-primary" id="callDriverBtn">CALL THE OFFICE</button>
     <button class="btn-danger-outline" id="needCancelBtn">NEED TO CANCEL?</button>
     <div class="card" id="cancelInProgressPrompt" style="display:none;border-color:#791F1F;text-align:center;margin-top:16px;">
-      <p style="font-size:17px;font-weight:700;margin:0 0 8px;">Tariq is already on his way</p>
-      <p style="font-size:14px;color:var(--text-secondary);margin:0 0 18px;">To cancel now, please call the office directly so we can let him know straight away.</p>
-      <button class="btn-danger" id="callToCancel" style="margin-bottom:0;">CALL THE OFFICE NOW</button>
+      <p style="font-size:16px;font-weight:700;margin:0 0 8px;">Tariq is already on his way</p>
+      <p style="font-size:14px;color:var(--text-secondary);margin:0 0 18px;">Call the office directly and we'll let him know.</p>
+      <button class="btn-danger" id="callToCancel">CALL THE OFFICE NOW</button>
     </div>
   </div>
 
   <!-- ARRIVED -->
   <div class="screen" id="screenArrived">
     <div class="arrived-box">
-      <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:10px;">
-        <path d="M12 9v4"/><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.71 3.86a2 2 0 0 0-3.42 0z"/><circle cx="12" cy="17" r="0.6" fill="#FFFFFF"/>
-      </svg>
       <p style="font-size:20px;color:#FFFFFF;font-weight:700;margin:0 0 4px;letter-spacing:0.5px;">YOUR DRIVER HAS ARRIVED</p>
       <p style="font-size:44px;color:#FFFFFF;font-weight:700;margin:6px 0 0;">Tariq</p>
     </div>
     <div class="card" style="border-width:3px;text-align:center;">
-      <p style="font-size:15px;font-weight:700;margin:0 0 10px;letter-spacing:0.5px;">SILVER FORD GALAXY</p>
       <p style="font-size:34px;font-weight:700;margin:0;letter-spacing:2px;">KL19 XYZ</p>
     </div>
-    <p style="text-align:center;font-size:18px;font-weight:600;margin:0 0 20px;">Waiting outside for you</p>
-    <button class="btn-secondary" id="homeBtnArrived">DONE</button>
+    <button class="btn-secondary" id="homeBtnArrived" style="margin-top:16px;">DONE</button>
+  </div>
+
+  <!-- PROFILE -->
+  <div class="screen" id="screenProfile">
+    <div class="card" style="text-align:center;">
+      <div class="avatar">👵🏻</div>
+      <p style="font-size:20px;font-weight:700;margin:0 0 4px;">Mrs Owen</p>
+      <p style="font-size:14px;color:var(--text-secondary);margin:0;">Customer since Jan 2026</p>
+    </div>
+    <div class="card" style="margin-bottom:20px;">
+      <div class="row"><span class="label">Rides this month</span><span class="value">2 of 4</span></div>
+      <div class="row"><span class="label">Proxy booker</span><span class="value">Karen (daughter)</span></div>
+      <div class="row"><span class="label">Emergency contact</span><span class="value">Karen, 07700 900123</span></div>
+    </div>
+    <button class="btn-secondary" id="settingsBtn">SETTINGS</button>
+    <button class="btn-secondary" id="helpBtn">HELP & QUESTIONS</button>
+    <button class="btn-primary" id="callFromProfile">CALL THE OFFICE</button>
+  </div>
+
+  <!-- SETTINGS -->
+  <div class="screen" id="screenSettings">
+    <div class="card-tinted">
+      <p style="font-size:14px;font-weight:700;margin:0 0 6px;letter-spacing:0.5px;">TOP UP</p>
+      <p style="font-size:14px;margin:0 0 14px;">Need more rides this month?</p>
+      <button class="btn-secondary topupBtn" data-count="2" style="display:flex;justify-content:space-between;align-items:center;"><span>+2 rides</span><span>£16</span></button>
+      <button class="btn-secondary topupBtn" data-count="4" style="display:flex;justify-content:space-between;align-items:center;"><span>+4 rides</span><span>£30</span></button>
+    </div>
+    <div class="card" style="display:flex;justify-content:space-between;align-items:center;">
+      <div><p style="font-size:15px;font-weight:700;margin:0 0 2px;">Share my ride</p><p style="font-size:12px;color:var(--text-secondary);margin:0;">Karen gets a text every pickup</p></div>
+      <div class="toggle" id="shareToggle" style="margin-left:12px;"><div class="dot"></div></div>
+    </div>
+    <div class="card">
+      <p style="font-size:14px;font-weight:700;margin:0 0 10px;letter-spacing:0.5px;">TEXT SIZE</p>
+      <div class="textsize-row">
+        <button class="btn-secondary" id="textStandard">Standard</button>
+        <button class="btn-primary" id="textLarge">Large</button>
+      </div>
+    </div>
+    <div class="billing-mini">
+      <p>BILLING</p>
+      <div style="display:flex;justify-content:space-between;">
+        <span style="font-size:13px;color:var(--text-secondary);">Card ending 4417</span>
+        <span style="font-size:13px;font-weight:600;">£32 on 1 Oct</span>
+      </div>
+      <p style="font-size:12px;color:var(--text-secondary);margin:6px 0 0;font-weight:400;">To change, call the office.</p>
+    </div>
+  </div>
+
+  <!-- HELP -->
+  <div class="screen" id="screenHelp">
+    <div class="faq-card">
+      <p>How do I cancel a ride?</p>
+      <p>Tap Cancel on the home screen or in My Rides. If your driver's already on the way, call the office.</p>
+    </div>
+    <div class="faq-card">
+      <p>What if my driver is late?</p>
+      <p>Check your tracker screen for updates, or call the office and we'll check for you.</p>
+    </div>
+    <div class="faq-card">
+      <p>Can someone else book for me?</p>
+      <p>Yes, your proxy booker can call and book, change, or cancel on your behalf.</p>
+    </div>
+    <div class="faq-card">
+      <p>Can I message my driver?</p>
+      <p>Not directly — call the office and we'll pass on anything the driver needs to know.</p>
+    </div>
+    <button class="btn-primary" id="callFromHelp">CALL THE OFFICE</button>
   </div>
 
   <p class="toast" id="toastcc"></p>
@@ -274,17 +265,17 @@ button:active{opacity:0.85;}
 
 <script>
 (function(){
-  var screens = ['screenHome','screenProfile','screenHelp','screenPrebooked','screenConfirm','screenTrack','screenArrived'];
+  var screens = ['screenHome','screenRides','screenConfirm','screenTrack','screenArrived','screenProfile','screenSettings','screenHelp'];
   var subhead = document.getElementById('subhead');
   var toast = document.getElementById('toastcc');
   var trackTimer = null;
   var mapShown = false;
   var shareOn = true;
 
-  function show(id, subtext){
+  function show(id, text){
     screens.forEach(function(s){ document.getElementById(s).classList.remove('active'); });
     document.getElementById(id).classList.add('active');
-    subhead.textContent = subtext;
+    subhead.textContent = text;
     toast.textContent = '';
   }
 
@@ -303,11 +294,11 @@ button:active{opacity:0.85;}
   document.getElementById('homeBtn').onclick = goHome;
   document.getElementById('homeBtnArrived').onclick = goHome;
   document.getElementById('profileBtn').onclick = function(){ show('screenProfile', 'Your profile'); };
+  document.getElementById('ridesBtn').onclick = function(){ show('screenRides', 'My rides'); };
+  document.getElementById('settingsBtn').onclick = function(){ show('screenSettings', 'Settings'); };
   document.getElementById('helpBtn').onclick = function(){ show('screenHelp', 'Help & Questions'); };
-  document.getElementById('prebookedBtn').onclick = function(){ show('screenPrebooked', 'Your pre-booked rides'); };
-  document.getElementById('usualBtn').onclick = function(){ show('screenConfirm', 'Confirm your booking'); };
 
-  ['callBtn','callFromProfile','callFromHelp','callOfficeFromPrebooked','callDriverBtn','callToCancel'].forEach(function(id){
+  ['callBtn','callFromProfile','callFromHelp','callChangeRide','callDriverBtn','callToCancel'].forEach(function(id){
     document.getElementById(id).onclick = function(){ toast.textContent = 'Calling the office now'; };
   });
 
@@ -319,20 +310,23 @@ button:active{opacity:0.85;}
     document.getElementById('cancelledNotice').style.display = 'block';
   };
 
-  document.querySelectorAll('.cancelbtn').forEach(function(btn){
-    btn.onclick = function(){
-      btn.closest('.ride-item').style.opacity = '0.4';
-      toast.textContent = btn.getAttribute('data-day') + "'s ride cancelled";
-    };
+  document.querySelectorAll('.cancelUpcoming').forEach(function(btn){
+    btn.onclick = function(){ btn.closest('.ride-item').style.opacity = '0.4'; toast.textContent = 'Ride cancelled'; };
   });
 
   document.querySelectorAll('.topupBtn').forEach(function(btn){
+    btn.onclick = function(){ toast.textContent = 'Added ' + btn.getAttribute('data-count') + ' rides to your account'; };
+  });
+
+  document.querySelectorAll('.regular-btn').forEach(function(btn){
     btn.onclick = function(){
-      toast.textContent = 'Added ' + btn.getAttribute('data-count') + ' rides to your account';
+      document.getElementById('confirmTripName').textContent = btn.getAttribute('data-name');
+      document.getElementById('confirmDest').textContent = btn.getAttribute('data-dest');
+      show('screenConfirm', 'Confirm your ride');
     };
   });
 
-  document.getElementById('confirmBtn').onclick = function(){
+  document.getElementById('confirmBookingBtn').onclick = function(){
     show('screenTrack', 'Your ride is confirmed');
     var minutesLeft = 6;
     var pathPoints = [{x:90,y:95},{x:140,y:75},{x:190,y:58},{x:230,y:45},{x:265,y:35}];
@@ -343,9 +337,7 @@ button:active{opacity:0.85;}
       if(minutesLeft <= 1){
         eta.textContent = 'Arriving now';
         clearInterval(trackTimer);
-        setTimeout(function(){
-          show('screenArrived', 'Driver has arrived');
-        }, 900);
+        setTimeout(function(){ show('screenArrived', 'Driver has arrived'); }, 900);
         return;
       }
       minutesLeft -= 1;
